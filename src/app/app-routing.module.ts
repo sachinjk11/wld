@@ -12,11 +12,12 @@ import { AuthGuard } from './auth/auth-guard.service';
 import { PostListComponent } from './post/post-list/post-list.component';
 import { PostEditComponent } from './post/post-edit/post-edit.component';
 import { PostDetailsComponent } from './post/post-details/post-details.component';
+import { PostComponent } from './post/post.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/weight-loss-Tips', pathMatch: 'full' },
 
-   { path: 'weight-loss-Tips', component: PostListComponent, children: [
+   { path: 'weight-loss-Tips', component: PostComponent, children: [
      { path: 'new', component: PostEditComponent, canActivate: [AuthGuard] },
      { path: ':id', component: PostDetailsComponent },
      { path: ':id/edit', component: PostEditComponent, canActivate: [AuthGuard] },

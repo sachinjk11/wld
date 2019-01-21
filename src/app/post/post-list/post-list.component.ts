@@ -28,6 +28,13 @@ export class PostListComponent implements OnInit {
     onNewPost() {
     this.router.navigate(['new'], {relativeTo: this.route});
   }
+  new()
+  {
+    console.log('---------new1'+this.router);
+    this.router.navigate(['new'], {relativeTo: this.route});
+    console.log('---------new2'+this.route);
+    
+  }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
