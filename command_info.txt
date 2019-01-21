@@ -18,11 +18,38 @@ npm install --save bootstrap@3
 
 
 
-git submodule update --init –recursive
+git submodule update --init ï¿½recursive
 
 >npm install
 
 >npm run app:einvoice
+
+
+ng build --prod --aot
+
+
+
+
+------------------------------------------
+
+
+Meta Description
+dr jichkar,Shrikant Jichkar,dixit diet,dixit diet plan,dr jagannath dixit,dr jagannath dixit contact,importance of diet,fastest way to lose weight
+We're committed to being your source for expert health guidance. Come to us in your pursuit of wellness.
+Onlymyhealth is a resource-house of health information and medical updates on healthy life ideas. Get closer to healthy living with the help of expert advice on weight loss, cancer health, pregnancy, beauty and personal care, relationships, home remedies and diabetes.
+Proven weight loss program through super foods. Truweight Review - No Pills, No machines, No Lies. Only honest weight loss through diet! Get FREE Diet Score & Indian Diet Tips to lose weight- Truweight
+Verywell Fit is your trusted source for information on eating well and exercising. Let our expert advice, creative workouts, and delicious recipes inspire you.
+The all-new ultimate weight-loss website featuring simple food swaps, recipes, shopping tips, food news, health hacks and much more.
+Want to drop fat by eating ridiculously well and exercising less? Whether you?re Paleo, Keto, Vegan, Wild, or completely clueless, we?re here to help you eat right, train smarter, and transform your body and mind to be your absolute best. This family-friendly show is free of outside advertising for your listening pleasure. Winner of 4 awards and #1 in Health in 8+ countries. Yes, you really can be happy and healthy at the same time. Take it from The Fat-Burning Man, burning fat can be a lot of fun. :) For more visit: FatBurningMan.com.
+The Paleo Diet? is based upon characteristics of ancient diets that will help to optimize your health, minimize your risk of disease, and lose weight.
+Lifestyle Fitness weight loss camp for adults in Utah is an all inclusive affordable adult fitness camp. Enjoy weight loss, fat loss & healthy heating
+Find healthy, delicious recipes and menu ideas from our test kitchen cooks and nutrition experts at EatingWell magazine. Learn how to make healthier food choices every day.
+Acclaimed as the best weight loss resort worldwide, Pritikin is renowned for both its results and its beautiful health resort location. Call (888) 254-1462.
+Onlymyhealth is a resource-house of health information and medical updates on healthy life ideas. Get closer to healthy living with the help of expert advice on weight loss, cancer health, pregnancy, beauty and personal care, relationships, home remedies and diabetes.
+Are you interested in keto or low carb? We?ll make your journey simple and inspiring. We show no ads, take no industry money and sell no products, instead we?re funded by the people. Our goal is to empower people everywhere to revolutionize their health, by making low carb simple.
+Nutrisystem is more than a diet plan, our FreshStart program is designed to help you lose weight fast and improve your health. Jumpstart your weight loss!
+
+
 
 
 -------------------------------------------

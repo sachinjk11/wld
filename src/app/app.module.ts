@@ -22,6 +22,12 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service';
+import { ViewDietPlanComponent } from './diet-plans/view-diet-plan/view-diet-plan.component';
+import { EditDietPlanComponent } from './diet-plans/edit-diet-plan/edit-diet-plan.component';
+import { ListDietPlanComponent } from './diet-plans/list-diet-plan/list-diet-plan.component';
+import { QnaListComponent } from './qna-list/qna-list.component';
+import { QnaEditComponent } from './qna-list/qna-edit/qna-edit.component';
+import { DietPlansComponent } from './diet-plans/diet-plans.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +43,13 @@ import { AuthGuard } from './auth/auth-guard.service';
     RecipeStartComponent,
     RecipeEditComponent,
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+    ViewDietPlanComponent,
+    EditDietPlanComponent,
+    ListDietPlanComponent,
+    QnaListComponent,
+    QnaEditComponent,
+    DietPlansComponent
   ],
   imports: [
     BrowserModule,
