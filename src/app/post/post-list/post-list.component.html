@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" (click)="onNewPost()">New Post</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <app-post-item
+      *ngFor="let postsElm of posts; let i = index"
+      [post]="postsElm"
+      [index]="i"></app-post-item>
+  </div>
+</div>
+
