@@ -1,7 +1,6 @@
 <a
   style="cursor: pointer;"
-  [routerLink]="[index]"
-  routerLinkActive="active"
+  (click)="onClickPost()"
   class="list-group-item clearfix">
   <div class="pull-left">
     <h4 class="list-group-item-heading"><div [innerHTML]=" post.title "></div></h4>

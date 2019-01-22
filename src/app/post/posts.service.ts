@@ -11,6 +11,8 @@ export class PostService
     ];
 
     postUpdated = new Subject<Post[]>();
+    postSelected = new Subject<boolean>();
+    postEdit = new Subject<number>();
 
     constructor(){ }
 

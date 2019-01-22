@@ -24,10 +24,19 @@ export class PostDetailsComponent implements OnInit {
           this.post = this.postservice.getByIndex(this.id);
         }
       );
+      this.post = this.postservice.getByIndex(this.id);
+      this.postservice.postSelected.next(true);
+      console.log('---ngOnInit details - '+this.postservice.postSelected);
+      
   }
 
-  onEditRecipe() {
-    this.router.navigate(['edit'], {relativeTo: this.route});
-    // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
+  onEdit() {
+    //this.router.navigate(['edit'], {relativeTo: this.route});
+     this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
+  }
+
+  onDelete()
+  {
+    
   }
 }

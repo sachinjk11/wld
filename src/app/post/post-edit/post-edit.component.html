@@ -1,3 +1,23 @@
-<p>
-  post-edit works!
-</p>
+<div class="row">
+  <div class="col-xs-12">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="row">
+        <div class="col-xs-12 form-group">
+          <label for="title">Title</label>
+          <input  type="text" id="title" class="form-control" name="title" ngModel  required  #title="ngModel">
+        </div>
+        <div class="col-xs-12 form-group">
+          <label for="desc">Description</label>
+          <textarea type="text" id="desc" class="form-control"  name="desc" rows="11" ngModel required #desc="ngModel"></textarea>
+        </div>
+      </div>
+       <div class="row">
+         <div class="col-xs-12">
+            <button class="btn btn-success" type="submit" [disabled]="!f.valid">{{ editMode ? 'Update' : 'Add' }}</button>
+            <button  class="btn btn-danger" type="button" (click)="onDelete()" *ngIf="editMode">Delete</button>
+            <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
+          </div>
+        </div>
+    </form>
+  </div>
+</div>

@@ -12,10 +12,11 @@ import { AuthGuard } from './auth/auth-guard.service';
 import { PostListComponent } from './post/post-list/post-list.component';
 import { PostEditComponent } from './post/post-edit/post-edit.component';
 import { PostDetailsComponent } from './post/post-details/post-details.component';
+import { DietPlansComponent } from './diet-plans/diet-plans.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/weight-loss-Tips', pathMatch: 'full' },
-
+   { path: 'weight-loss-diet-plans', component: DietPlansComponent },
    { path: 'weight-loss-Tips', component: PostListComponent, children: [
      { path: 'new', component: PostEditComponent, canActivate: [AuthGuard] },
      { path: ':id', component: PostDetailsComponent },

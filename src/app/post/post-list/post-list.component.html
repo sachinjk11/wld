@@ -1,15 +1,23 @@
 <div class="row">
   <div class="col-xs-12">
-    <button class="btn btn-success" (click)="onNewPost()">New Post</button>
+    <button class="btn btn-success pull-left" (click)="onNewPost()">New Post</button>
+    <button class="btn btn-success pull-right" (click)="onClickback()">Back</button>
   </div>
 </div>
 <hr>
 <div class="row">
-  <div class="col-xs-12">
-    <app-post-item
+  <div class="col-xs-12" *ngIf="postSelected; then ItemPost; else ListPost">
+  </div>
+</div>
+
+<ng-template #ListPost>
+  <app-post-item
       *ngFor="let postsElm of posts; let i = index"
       [post]="postsElm"
       [index]="i"></app-post-item>
-  </div>
-</div>
+</ng-template>
+
+<ng-template #ItemPost>
+  <router-outlet></router-outlet>
+</ng-template>
 
