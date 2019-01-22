@@ -27,7 +27,11 @@ import { PostEditComponent } from './post/post-edit/post-edit.component';
 import { PostDetailsComponent } from './post/post-details/post-details.component';
 import { PostItemComponent } from './post/post-list/post-item/post-item.component';
 import { PostService } from './post/posts.service';
+<<<<<<< HEAD
 import { DietPlansComponent } from './diet-plans/diet-plans.component';
+=======
+import { PostComponent } from './post/post.component';
+>>>>>>> e882ee8966809406b6f197148697dd35f2181c43
 
 @NgModule({
   declarations: [
@@ -48,7 +52,11 @@ import { DietPlansComponent } from './diet-plans/diet-plans.component';
     PostEditComponent,
     PostDetailsComponent,
     PostItemComponent,
+<<<<<<< HEAD
     DietPlansComponent
+=======
+    PostComponent
+>>>>>>> e882ee8966809406b6f197148697dd35f2181c43
   ],
   imports: [
     BrowserModule,
