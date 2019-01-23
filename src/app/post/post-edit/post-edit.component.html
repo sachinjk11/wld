@@ -1,23 +1,30 @@
 <div class="row">
-  <div class="col-xs-12">
-    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-      <div class="row">
-        <div class="col-xs-12 form-group">
-          <label for="title">Title</label>
-          <input  type="text" id="title" class="form-control" name="title" ngModel  required  #title="ngModel">
-        </div>
-        <div class="col-xs-12 form-group">
-          <label for="desc">Description</label>
-          <textarea type="text" id="desc" class="form-control"  name="desc" rows="11" ngModel required #desc="ngModel"></textarea>
-        </div>
-      </div>
-       <div class="row">
-         <div class="col-xs-12">
-            <button class="btn btn-success" type="submit" [disabled]="!f.valid">{{ editMode ? 'Update' : 'Add' }}</button>
-            <button  class="btn btn-danger" type="button" (click)="onDelete()" *ngIf="editMode">Delete</button>
-            <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
+    <div class="col-xs-12">
+      <form [formGroup]="postFormGroup" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-xs-12">
+		<button type="submit" class="btn btn-success"  [disabled]="!postFormGroup.valid">Save</button>
+		<button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
           </div>
         </div>
-    </form>
-  </div>
-</div>
+        <div class="row">
+          <div class="col-xs-12">
+		<div class="form-group">
+		<label for="title">Title</label>
+		<input  type="text" id="title"   formControlName="title"   class="form-control">
+		</div>
+	  </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+		<div class="form-group">
+		<label for="desc">Description</label>
+		<textarea type="text" id="desc"class="form-control" formControlName="desc"  rows="11"></textarea>
+		</div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>  
+  

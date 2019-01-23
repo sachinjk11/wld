@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Subscription } from 'rxjs';
+import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs/Subscription';
 import { PostService } from '../posts.service';
-import { post } from 'selenium-webdriver/http';
 import { Post } from '../posts.model';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
@@ -13,13 +12,12 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 })
 export class PostEditComponent implements OnInit {
 
-  @ViewChild('f') postEditForm: NgForm;
   editMode = false;
   editedItemIndex: number;
-  editedPost : Post;
+  postFormGroup : FormGroup;
 
   constructor(private postService: PostService, private route: ActivatedRoute, private router: Router) { 
-    console.log('PostEditComponent constructor');
+   
   }
 
   ngOnInit() {
@@ -29,45 +27,42 @@ export class PostEditComponent implements OnInit {
         (params: Params) => {
           this.editedItemIndex = +params['id'];
           this.editMode = params['id'] != null;
-          console.log('1----editedItemIndex---'+this.editedItemIndex);
-          if(this.editMode)
-          {
-            this.editedPost = this.postService.getByIndex(this.editedItemIndex);
-            console.log('1----'+this.editedPost);
-            
-            this.postEditForm.setValue({
-              title : this.editedPost.title,
-              desc : this.editedPost.desc
-            })
-            console.log('2----'+this.postEditForm.value);
-          }
+          this.initForm();
         }
       );
-
   }
 
-  onSubmit(form: NgForm) {
-    const value = form.value;
-    const post = new Post(value.title, value.desc);
+  onSubmit() {
     if (this.editMode) {
-      this.postService.update(this.editedItemIndex, post);
+      console.log(this.editedItemIndex+'----'+this.postFormGroup.value);
+      this.postService.update(this.editedItemIndex, this.postFormGroup.value);
     } else {
-      this.postService.add(post);
+      this.postService.add(this.postFormGroup.value);
+      console.log(this.postFormGroup.value);
     }
-    this.editMode = false;
-    form.reset();
+    this.onCancel();
+
   }
 
-  onClear() {
-    this.postEditForm.reset();
-    this.editMode = false;
+  onCancel() {
+    this.router.navigate(['../'], {relativeTo: this.route});
   }
 
-  onDelete() {
-    this.postService.delete(this.editedItemIndex);
-    this.onClear();
+  private initForm() {
+
+    let ptitle = "";
+    let pdescription = '';
+
+    if (this.editMode) {
+      const post = this.postService.getByIndex(this.editedItemIndex);
+      ptitle = post.title;
+      pdescription = post.desc;
+    }
+    
+    this.postFormGroup = new FormGroup({
+      'title': new FormControl(ptitle, Validators.required),
+      'desc': new FormControl(pdescription, Validators.required)
+    });
   }
-
-
 
 }

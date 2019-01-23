@@ -2,10 +2,10 @@
 
 export class Post
 {
-   public title : String;
-   public desc : String;
+   public title : string;
+   public desc : string;
 
-   constructor(title : String, desc : String )
+   constructor(title : string, desc : string )
    {
         this.title = title;
         this.desc = desc;

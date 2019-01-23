@@ -1,6 +1,7 @@
 import { Post } from './posts.model';
 import { Subject } from 'rxjs/Subject';
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
+import { DataStorageService } from '../shared/data-storage.service';
 
 @Injectable()
 export class PostService
@@ -14,7 +15,12 @@ export class PostService
     postSelected = new Subject<boolean>();
     postEdit = new Subject<number>();
 
-    constructor(){ }
+    constructor(){ 
+      if(!isDevMode()){
+        //private dataStorageService : DataStorageService
+        //dataStorageService.getposts();
+      }
+    }
 
     set(posts: Post[]) {
         this.posts = posts;

@@ -5,24 +5,26 @@ import 'rxjs/Rx';
 import { RecipeService } from '../recipes/recipe.service';
 import { Recipe } from '../recipes/recipe.model';
 import { AuthService } from '../auth/auth.service';
+import { PostService } from '../post/posts.service';
+import { Post } from '../post/posts.model';
 
 @Injectable()
 export class DataStorageService {
   constructor(private http: Http,
-              private recipeService: RecipeService,
+              private recipeService: RecipeService,private postService : PostService,
               private authService: AuthService) {
   }
 
   storeRecipes() {
     const token = this.authService.getToken();
 
-    return this.http.put('https://ng-recipe-book.firebaseio.com/recipes.json?auth=' + token, this.recipeService.getRecipes());
+    return this.http.put('https://wld001.firebaseio.com/recipes.json?auth=' + token, this.recipeService.getRecipes());
   }
 
   getRecipes() {
     const token = this.authService.getToken();
 
-    this.http.get('https://ng-recipe-book.firebaseio.com/recipes.json?auth=' + token)
+    this.http.get('https://wld001.firebaseio.com/recipes.json?auth=' + token)
       .map(
         (response: Response) => {
           const recipes: Recipe[] = response.json();
@@ -38,6 +40,23 @@ export class DataStorageService {
         (recipes: Recipe[]) => {
           this.recipeService.setRecipes(recipes);
         }
+      );
+  }
+
+  storePosts() {
+    const token = this.authService.getToken();
+    return this.http.put('https://wld001.firebaseio.com/posts.json?auth=' + token, this.postService.get());
+  }
+
+  getposts() {
+    //const token = this.authService.getToken();
+    //this.http.get('https://wld001.firebaseio.com/posts.json?auth=' + token)
+    this.http.get('https://wld001.firebaseio.com/posts.json')
+      .map(
+            (response: Response) => {  const posts: Post[] = response.json();  return posts; }
+          )
+      .subscribe(
+                    (posts: Post[]) => {  this.postService.set(posts); }
       );
   }
 }

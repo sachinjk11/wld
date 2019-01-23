@@ -16,8 +16,7 @@ export class PostListComponent implements OnInit, OnChanges {
  postSelected : boolean;
 
   constructor(private postservice : PostService, private router : Router, private route : ActivatedRoute) { 
-    this.postservice.postSelected.next(false);
-    console.log('constructor PostListComponent');  
+    //this.postservice.postSelected.next(false);
   }
 
   ngOnInit() {
@@ -51,11 +50,8 @@ export class PostListComponent implements OnInit, OnChanges {
    
   }
   new()
-  {
-    console.log('---------new1'+this.router);
-    this.router.navigate(['new'], {relativeTo: this.route});
-    console.log('---------new2'+this.route);
-    
+  { 
+    this.router.navigate(['new'], {relativeTo: this.route});   
   }
 
   ngOnDestroy() {
