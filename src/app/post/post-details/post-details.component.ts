@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Post } from '../posts.model';
 import { PostService } from '../posts.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-post-details',
@@ -13,7 +14,7 @@ export class PostDetailsComponent implements OnInit {
   post: Post;
   id: number;
 
-  constructor(private postservice : PostService, private router : Router, private route : ActivatedRoute) {
+  constructor(private postservice : PostService, private router : Router, private route : ActivatedRoute,public authService: AuthService) {
   }
 
   ngOnInit() {

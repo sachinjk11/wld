@@ -3,6 +3,7 @@ import { PostService } from '../posts.service';
 import { Post } from '../posts.model';
 import { Subscription } from 'rxjs/Subscription';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-post-list',
@@ -15,7 +16,7 @@ export class PostListComponent implements OnInit, OnChanges {
  subscription2 : Subscription;
  postSelected : boolean;
 
-  constructor(private postservice : PostService, private router : Router, private route : ActivatedRoute) { 
+  constructor(private postservice : PostService, private router : Router, private route : ActivatedRoute, public authService: AuthService) { 
     //this.postservice.postSelected.next(false);
   }
 

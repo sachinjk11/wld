@@ -1,7 +1,7 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <h1>><div [innerHTML]=" post.title "></div>{{post.title}}</h1>
+    <h2><div  class="myTitle" [innerHTML]=" post.title "></div></h2>
   </div>
 </div>
 <div class="row">
@@ -9,12 +9,9 @@
     <div
       class="btn-group"
       appDropdown>
-      <button
-        type="button"
-        class="btn btn-primary dropdown-toggle">
-        Manage Post <span class="caret"></span>
+      <button   type="button" class="btn btn-primary dropdown-toggle" *ngIf="authService.isAuthenticated()" > Manage Post <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu" >
         <li><a style="cursor: pointer;" (click)="onEdit()">Edit Post</a></li>
         <li><a style="cursor: pointer;" (click)="onDelete()">Delete Post</a></li>
       </ul>
@@ -23,7 +20,7 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <div [innerHTML]="post.desc"> {{post.desc}}
+    <div class="myText" [innerHTML]="post.desc"> {{post.desc}}
   </div>
 </div>
 
