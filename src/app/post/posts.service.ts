@@ -7,9 +7,10 @@ import { DataStorageService } from '../shared/data-storage.service';
 export class PostService
 {
     posts : Post[] = [
-        new Post('title <b>header</b>','dghsad jsafsa asdas airwwe dsds  asdsa   sadas '),
-        new Post('<b> title header</b>','dghasdasdsad asda <br>asdas airwwe asdasdasdasd  asdsasdasda   sasdsadasadas asdasdas adasdsad  asdasd asdsadsad asdasghfgh g fhf'),
-    ];
+       // new Post('title <b>header</b>','dghsad jsafsa asdas airwwe dsds  asdsa   sadas '),
+       // new Post('<b> title header</b>','dghasdasdsad asda <br>asdas airwwe asdasdasdasd  asdsasdasda   sasdsadasadas asdasdas adasdsad  asdasd asdsadsad asdasghfgh g fhf'),
+            new Post('Loading...','Loading...')
+      ];
 
     postUpdated = new Subject<Post[]>();
     postSelected = new Subject<boolean>();

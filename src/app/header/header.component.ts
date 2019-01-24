@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-   if(!isDevMode())
+  // if(!isDevMode())
      this.onFetchData();
   }
   onSaveData() {
