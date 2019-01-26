@@ -40,7 +40,7 @@ export class PlanListComponent implements OnInit {
  
    onClickback(){
      this.planService.planSelected.next(false);
-     this.router.navigate([''], {relativeTo: this.route});
+     this.router.navigate(['/weight-loss-diet-plans'], {relativeTo: this.route});
     
    }
  

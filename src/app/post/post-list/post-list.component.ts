@@ -47,7 +47,7 @@ export class PostListComponent implements OnInit, OnChanges {
 
   onClickback(){
     this.postservice.postSelected.next(false);
-    this.router.navigate([''], {relativeTo: this.route});
+    this.router.navigate(['/weight-loss-Tips'], {relativeTo: this.route});
    
   }
   new()
