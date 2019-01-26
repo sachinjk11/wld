@@ -29,6 +29,11 @@ import { PostItemComponent } from './post/post-list/post-item/post-item.componen
 import { PostService } from './post/posts.service';
 import { DietPlansComponent } from './diet-plans/diet-plans.component';
 import { FooterComponent } from './footer/footer.component';
+import { PlanDetailsComponent } from './plan/plan-details/plan-details.component';
+import { PlanEditComponent } from './plan/plan-edit/plan-edit.component';
+import { PlanListComponent } from './plan/plan-list/plan-list.component';
+import { PlanItemComponent } from './plan/plan-list/plan-item/plan-item.component';
+import { PlanService } from './plan/plans.service';
 
 
 @NgModule({
@@ -51,7 +56,11 @@ import { FooterComponent } from './footer/footer.component';
     PostDetailsComponent,
     PostItemComponent,
     DietPlansComponent,
-    FooterComponent
+    FooterComponent,
+    PlanDetailsComponent,
+    PlanEditComponent,
+    PlanListComponent,
+    PlanItemComponent
 
   ],
   imports: [
@@ -61,7 +70,8 @@ import { FooterComponent } from './footer/footer.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuard, PostService],
+  providers: [ShoppingListService, RecipeService, PlanService,
+    DataStorageService, AuthService, AuthGuard, PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

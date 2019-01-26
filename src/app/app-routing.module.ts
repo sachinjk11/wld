@@ -14,15 +14,21 @@ import { PostEditComponent } from './post/post-edit/post-edit.component';
 import { PostDetailsComponent } from './post/post-details/post-details.component';
 
 import { DietPlansComponent } from './diet-plans/diet-plans.component';
+import { PlanListComponent } from './plan/plan-list/plan-list.component';
+import { PlanEditComponent } from './plan/plan-edit/plan-edit.component';
+import { PlanDetailsComponent } from './plan/plan-details/plan-details.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/weight-loss-Tips', pathMatch: 'full' },
-   { path: 'weight-loss-diet-plans', component: DietPlansComponent },
+  { path: 'weight-loss-diet-plans', component: PlanListComponent, children: [
+    { path: 'new', component: PlanEditComponent, canActivate: [AuthGuard] },
+    { path: ':id/:title', component: PlanDetailsComponent },
+    { path: ':id/:title/edit', component: PlanEditComponent, canActivate: [AuthGuard] },
+  ] },
    { path: 'weight-loss-Tips', component: PostListComponent, children: [
-
      { path: 'new', component: PostEditComponent, canActivate: [AuthGuard] },
-     { path: ':id', component: PostDetailsComponent },
-     { path: ':id/edit', component: PostEditComponent, canActivate: [AuthGuard] },
+     { path: ':id/:title', component: PostDetailsComponent },
+     { path: ':id/:title/edit', component: PostEditComponent, canActivate: [AuthGuard] },
    ] },
   { path: 'recipes', component: RecipesComponent, children: [
     { path: '', component: RecipeStartComponent },
