@@ -28,6 +28,7 @@ import { PostDetailsComponent } from './post/post-details/post-details.component
 import { PostItemComponent } from './post/post-list/post-item/post-item.component';
 import { PostService } from './post/posts.service';
 import { DietPlansComponent } from './diet-plans/diet-plans.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { DietPlansComponent } from './diet-plans/diet-plans.component';
     PostEditComponent,
     PostDetailsComponent,
     PostItemComponent,
-    DietPlansComponent
+    DietPlansComponent,
+    FooterComponent
 
   ],
   imports: [
