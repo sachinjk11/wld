@@ -18,6 +18,7 @@ import { PlanListComponent } from './plan/plan-list/plan-list.component';
 import { PlanEditComponent } from './plan/plan-edit/plan-edit.component';
 import { PlanDetailsComponent } from './plan/plan-details/plan-details.component';
 import { HtmlViewerComponent } from './about-us/html-viewer/html-viewer.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/weight-loss-Tips', pathMatch: 'full' },
@@ -41,6 +42,7 @@ const appRoutes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'htmlViewer', component: HtmlViewerComponent },
+  { path: 'dashboard', component: DashboardComponent },
 ];
 
 @NgModule({

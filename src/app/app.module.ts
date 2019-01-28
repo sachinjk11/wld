@@ -37,6 +37,7 @@ import { PlanService } from './plan/plans.service';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { FeedbackComponent } from './about-us/feedback/feedback.component';
 import { HtmlViewerComponent } from './about-us/html-viewer/html-viewer.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { HtmlViewerComponent } from './about-us/html-viewer/html-viewer.componen
     PlanItemComponent,
     AboutUsComponent,
     FeedbackComponent,
-    HtmlViewerComponent
+    HtmlViewerComponent,
+    DashboardComponent
 
   ],
   imports: [
