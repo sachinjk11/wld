@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HtmlViewerComponent implements OnInit {
 
+  html : String = "";
+  
   constructor() { }
 
   ngOnInit() {
