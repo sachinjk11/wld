@@ -2,6 +2,7 @@ import { Post } from './posts.model';
 import { Subject } from 'rxjs/Subject';
 import { Injectable, isDevMode } from '@angular/core';
 import { DataStorageService } from '../shared/data-storage.service';
+import { Title } from '@angular/platform-browser';
 
 @Injectable()
 export class PostService
@@ -16,7 +17,8 @@ export class PostService
     postSelected = new Subject<boolean>();
     postEdit = new Subject<number>();
 
-    constructor(){ 
+   
+    constructor(private titleService: Title){ 
       if(!isDevMode()){
         //private dataStorageService : DataStorageService
         //dataStorageService.getposts();
@@ -33,7 +35,9 @@ export class PostService
       }
     
       getByIndex(index: number) {
-        return this.posts[index];
+        let post = this.posts[index];
+        this.setTitle(post.title);
+        return post;
       }
     
       add(post: Post) {
@@ -49,6 +53,10 @@ export class PostService
       delete(index: number) {
         this.posts.splice(index, 1);
         this.postUpdated.next(this.posts.slice());
+      }
+
+      public setTitle( newTitle: string) {
+        this.titleService.setTitle( newTitle );
       }
 
 }
