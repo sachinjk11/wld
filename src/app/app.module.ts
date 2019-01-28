@@ -35,6 +35,8 @@ import { PlanListComponent } from './plan/plan-list/plan-list.component';
 import { PlanItemComponent } from './plan/plan-list/plan-item/plan-item.component';
 import { PlanService } from './plan/plans.service';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { FeedbackComponent } from './about-us/feedback/feedback.component';
+import { HtmlViewerComponent } from './about-us/html-viewer/html-viewer.component';
 
 
 @NgModule({
@@ -62,7 +64,9 @@ import { AboutUsComponent } from './about-us/about-us.component';
     PlanEditComponent,
     PlanListComponent,
     PlanItemComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    FeedbackComponent,
+    HtmlViewerComponent
 
   ],
   imports: [

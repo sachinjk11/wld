@@ -14,25 +14,27 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-  // if(!isDevMode())
+ //if(!isDevMode())
      this.onFetchData();
   }
   onSaveData() {
-    // this.dataStorageService.storeRecipes().subscribe(
-    //     (response: Response) => {
-    //       console.log('Recipes----'+response);
-    //     }
-    //   );
+  
     this.dataStorageService.storePosts().subscribe(
         (response: Response) => {
           console.log('Posts----'+response);
         }
       );
+      this.dataStorageService.storePlans().subscribe(
+        (response: Response) => {
+          console.log('Plans----'+response);
+        }
+      );
   }
 
   onFetchData() {
-  //  this.dataStorageService.getRecipes();
+ 
     this.dataStorageService.getposts();
+    this.dataStorageService.getPlans();
   }
 
   onLogout() {
