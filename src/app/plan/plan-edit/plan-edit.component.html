@@ -1,3 +1,48 @@
-<p>
-  plan-edit works!
-</p>
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="planFormGroup" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-xs-12">
+  <button type="submit" class="btn btn-success"  [disabled]="!planFormGroup.valid">Save</button>
+  <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+
+<div class="row">
+<div class="col-xs-12">
+  <div class="form-group">
+    <label for="title">Title</label>
+   <input  type="text" id="title"   formControlName="title"   class="form-control">
+  </div>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="form-group">
+      <label for="imagePath">imagePath</label>
+     <input  type="text" id="imagePath"   formControlName="imagePath"   class="form-control">
+    </div>
+  </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="form-group">
+        <label for="intro">Introduction</label>
+       <input  type="text" id="intro"   formControlName="intro"   class="form-control">
+      </div>
+    </div>
+    </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+  <div class="form-group">
+  <label for="desc">Description</label>
+  <textarea type="text" id="desc"class="form-control" formControlName="desc"  rows="11"></textarea>
+  </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>  
