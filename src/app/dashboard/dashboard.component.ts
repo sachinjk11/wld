@@ -10,7 +10,13 @@ import * as $ from 'jquery';
 })
 export class DashboardComponent implements OnInit {
 
-  link = "http://localhost:4200/weight-loss-diet-plans/0/2-Meal-a-day-diet-plan";
+   mad2 = "http://localhost:4200/weight-loss-diet-plans/0/2-Meal-a-day-diet-plan";
+   ifd = "http://localhost:4200/weight-loss-diet-plans/0/2-Meal-a-day-diet-plan";
+   ktd = "http://localhost:4200/weight-loss-diet-plans/0/2-Meal-a-day-diet-plan";
+   pd = "http://localhost:4200/weight-loss-diet-plans/0/2-Meal-a-day-diet-plan";
+   vd = "http://localhost:4200/weight-loss-diet-plans/0/2-Meal-a-day-diet-plan";
+   lcd = "http://localhost:4200/weight-loss-diet-plans/0/2-Meal-a-day-diet-plan";
+   ddp = "http://localhost:4200/weight-loss-diet-plans/0/2-Meal-a-day-diet-plan";
 
   constructor(@Inject(WINDOW) private window: Window, private Renderer2 : Renderer2, @Inject(DOCUMENT) private _document ) { }
 
