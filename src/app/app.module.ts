@@ -1,3 +1,7 @@
+import { NgtUniversalModule } from '@ng-toolkit/universal';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { TransferHttpCacheModule } from '@nguniversal/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -71,8 +75,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     DashboardComponent
 
   ],
-  imports: [
-    BrowserModule,
+  imports:[
+ CommonModule,
+NgtUniversalModule,
+ 
+ TransferHttpCacheModule,
+HttpClientModule,
+ 
+    
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
@@ -80,6 +90,5 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   ],
   providers: [ShoppingListService, RecipeService, PlanService,
     DataStorageService, AuthService, AuthGuard, PostService],
-  bootstrap: [AppComponent]
 })
 export class AppModule { }
