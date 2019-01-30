@@ -19,7 +19,7 @@ export class PlanListComponent implements OnInit {
   planSelected : boolean;
  
    constructor(private planService : PlanService, private router : Router, private route : ActivatedRoute, public authService: AuthService) { 
-     //this.postservice.postSelected.next(false);
+  
    }
  
    ngOnInit() {

@@ -21,7 +21,8 @@ import { HtmlViewerComponent } from './about-us/html-viewer/html-viewer.componen
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/weight-loss-Tips', pathMatch: 'full' },
+  // { path: '', redirectTo: '/weight-loss-Tips', pathMatch: 'full' },
+  { path: '', component: DashboardComponent },
   { path: 'weight-loss-diet-plans', component: PlanListComponent, children: [
     { path: 'new', component: PlanEditComponent, canActivate: [AuthGuard] },
     { path: ':id/:title', component: PlanDetailsComponent },

@@ -3,6 +3,8 @@ import { Response } from '@angular/http';
 
 import { DataStorageService } from '../shared/data-storage.service';
 import { AuthService } from '../auth/auth.service';
+import { PlanService } from '../plan/plans.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +12,8 @@ import { AuthService } from '../auth/auth.service';
 })
 export class HeaderComponent implements OnInit {
   constructor(private dataStorageService: DataStorageService,
-              public authService: AuthService) {
+              public authService: AuthService, private planservice : PlanService,
+              private route : ActivatedRoute, private router : Router) {
   }
 
   ngOnInit() {
@@ -39,5 +42,11 @@ export class HeaderComponent implements OnInit {
 
   onLogout() {
     this.authService.logout();
+  }
+
+  onClickPlan()
+  {
+    this.planservice.planSelected.next(false);
+    this.router.navigate(['/weight-loss-diet-plans'], {relativeTo: this.route});
   }
 }
