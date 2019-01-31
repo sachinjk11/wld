@@ -4,6 +4,8 @@ import { Subscription } from 'rxjs/Subscription';
 import { PostService } from '../posts.service';
 import { Post } from '../posts.model';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
+import { Response } from '@angular/http';
 
 @Component({
   selector: 'app-post-edit',
@@ -16,7 +18,8 @@ export class PostEditComponent implements OnInit {
   editedItemIndex: number;
   postFormGroup : FormGroup;
 
-  constructor(private postService: PostService, private route: ActivatedRoute, private router: Router) { 
+  constructor(private postService: PostService, private route: ActivatedRoute, private router: Router,
+              private dataStorageService: DataStorageService) { 
    
   }
 
@@ -63,6 +66,17 @@ export class PostEditComponent implements OnInit {
       'title': new FormControl(ptitle, Validators.required),
       'desc': new FormControl(pdescription, Validators.required)
     });
+  }
+
+
+  saveToDB()
+  {
+    this.dataStorageService.storePosts().subscribe(
+      (response: Response) => {
+        console.log('Posts----'+response);
+      }
+    );
+    this.onCancel();
   }
 
 }

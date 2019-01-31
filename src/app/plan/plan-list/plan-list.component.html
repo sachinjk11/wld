@@ -1,17 +1,18 @@
-<div class="row">
-  <div class="col-xs-12">
+<div class="container">
+    <div class="row">
+      <div>
 
-    <button class="btn btn-success pull-left" (click)="onNewPlan()"  *ngIf="authService.isAuthenticated()" >New Plan</button>
-    <button class="btn btn-warning pull-right" (click)="onClickback()">Back</button>
+        <button class="btn btn-success pull-left" (click)="onNewPlan()"  *ngIf="authService.isAuthenticated()" >New Plan</button>
+        <button class="btn btn-warning pull-right" (click)="onClickback()">Back</button>
 
-  </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-xs-12" *ngIf="planSelected; then ItemPlan; else ListPlan">
+      </div>
+    </div>
 </div>
-<hr>
-<div class="row">
-  <div class="col-xs-12" *ngIf="planSelected; then ItemPlan; else ListPlan">
-  </div>
-</div>
-
 
 <ng-template #ListPlan>
 

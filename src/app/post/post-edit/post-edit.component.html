@@ -1,9 +1,11 @@
+
 <div class="row">
     <div class="col-xs-12">
       <form [formGroup]="postFormGroup" (ngSubmit)="onSubmit()">
         <div class="row">
           <div class="col-xs-12">
-		<button type="submit" class="btn btn-success"  [disabled]="!postFormGroup.valid">Save</button>
+    <button type="submit" class="btn btn-success"  [disabled]="!postFormGroup.valid">Save</button>
+    <button type="button" class="btn btn-success"  [disabled]="!postFormGroup.valid" (click)="saveToDB()">Save in DB</button>
 		<button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
           </div>
         </div>

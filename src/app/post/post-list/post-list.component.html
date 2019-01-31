@@ -1,17 +1,20 @@
-<div class="row">
-  <div class="col-xs-12">
 
-    <button class="btn btn-success pull-left" (click)="onNewPost()"  *ngIf="authService.isAuthenticated()" >New Post</button>
-    <button class="btn btn-warning pull-right" (click)="onClickback()">Back</button>
 
+<div class="container">
+  <div class="row">
+    <div >
+  
+      <button class="btn btn-success pull-left" (click)="onNewPost()"  *ngIf="authService.isAuthenticated()" >New Post</button>
+      <button class="btn btn-warning pull-right" (click)="onClickback()">Back</button>
+  
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12" *ngIf="postSelected; then ItemPost; else ListPost">
+    </div>
   </div>
 </div>
-<hr>
-<div class="row">
-  <div class="col-xs-12" *ngIf="postSelected; then ItemPost; else ListPost">
-  </div>
-</div>
-
 
 <ng-template #ListPost>
   <app-post-item
