@@ -46,7 +46,9 @@ export class HeaderComponent implements OnInit {
 
   onClickPlan()
   {
+    console.log('this.planSelected----'+this.planservice.planSelected);
     this.planservice.planSelected.next(false);
+    console.log('this.planSelected----'+this.planservice.planSelected);
     this.router.navigate(['/weight-loss-diet-plans'], {relativeTo: this.route});
   }
 }

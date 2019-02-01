@@ -37,11 +37,11 @@ export class PostEditComponent implements OnInit {
 
   onSubmit() {
     if (this.editMode) {
-      console.log(this.editedItemIndex+'----'+this.postFormGroup.value);
+     
       this.postService.update(this.editedItemIndex, this.postFormGroup.value);
     } else {
       this.postService.add(this.postFormGroup.value);
-      console.log(this.postFormGroup.value);
+     
     }
     this.onCancel();
 

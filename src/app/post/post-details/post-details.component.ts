@@ -27,7 +27,7 @@ export class PostDetailsComponent implements OnInit {
       );
       this.post = this.postservice.getByIndex(this.id);
       this.postservice.postSelected.next(true);
-      console.log('---ngOnInit details - '+this.postservice.postSelected);
+    
       
   }
 

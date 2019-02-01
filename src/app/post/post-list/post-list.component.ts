@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/auth/auth.service';
   templateUrl: './post-list.component.html',
   styleUrls: ['./post-list.component.css']
 })
-export class PostListComponent implements OnInit, OnChanges {
+export class PostListComponent implements OnInit {
  posts : Post[];
  subscription1 : Subscription;
  subscription2 : Subscription;
@@ -29,14 +29,9 @@ export class PostListComponent implements OnInit, OnChanges {
 
     this.posts = this.postservice.get();
     this.postservice.postSelected.next(false);
-    console.log('--ngOnInit--PostListComponent');    
+     
   }
 
-  ngOnChanges(changes: SimpleChanges){
-    console.log('--ngOnChanges--PostListComponent');  
-    console.log(changes);
-    
-  }
 
   
     onNewPost() {

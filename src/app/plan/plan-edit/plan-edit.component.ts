@@ -33,7 +33,7 @@ export class PlanEditComponent implements OnInit {
       this.planService.update(this.editedItemIndex, this.planFormGroup.value);
     } else {
       this.planService.add(this.planFormGroup.value);
-      console.log(this.planFormGroup.value);
+    
     }
     this.onCancel();
   }

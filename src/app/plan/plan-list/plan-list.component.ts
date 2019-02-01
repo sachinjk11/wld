@@ -42,7 +42,10 @@ export class PlanListComponent implements OnInit {
           {
                this.plans = this.planService.get();
               this.planService.planSelected.next(false);
-          }   
+          } 
+          
+          console.log('this.planSelected--'+this.planSelected);
+          
 
    }
      onNewPlan() {

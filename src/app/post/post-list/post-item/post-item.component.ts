@@ -19,7 +19,7 @@ export class PostItemComponent implements OnInit {
 
   onClickPost(){
     this.postservice.postSelected.next(true);
-    console.log('---onClickPost - '+this.postservice.postSelected);
+  
     this.router.navigate([this.index, this.post.title.replace(/\s+/g, '-')], {relativeTo: this.route});
 
   }

@@ -27,11 +27,9 @@ export class PlanDetailsComponent implements OnInit {
         
           this.plan = this.planService.getByIndex(this.id);
           this.subscription1 =  this.planService.planUpdated.subscribe(
-            (plans : Plan[])=>{ this.plan = plans[this.id], console.log('details page  data change here '+this.id)   });
+            (plans : Plan[])=>{ this.plan = plans[this.id] });
         }
       );
-
-     // this.plan = this.planService.getByIndex(this.id);
       this.planService.planSelected.next(true);
   }
 
