@@ -20,19 +20,19 @@ export class HeaderComponent implements OnInit {
  //if(!isDevMode())
      this.onFetchData();
   }
-  onSaveData() {
+  // onSaveData() {
   
-    this.dataStorageService.storePosts().subscribe(
-        (response: Response) => {
-          console.log('Posts----'+response);
-        }
-      );
-      this.dataStorageService.storePlans().subscribe(
-        (response: Response) => {
-          console.log('Plans----'+response);
-        }
-      );
-  }
+  //   this.dataStorageService.storePosts().subscribe(
+  //       (response: Response) => {
+  //         console.log('Posts----'+response);
+  //       }
+  //     );
+  //     this.dataStorageService.storePlans().subscribe(
+  //       (response: Response) => {
+  //         console.log('Plans----'+response);
+  //       }
+  //     );
+  // }
 
   onFetchData() {
  

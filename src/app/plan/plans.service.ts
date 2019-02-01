@@ -1,6 +1,7 @@
 import { Plan } from './plan.model';
 import { Subject } from 'rxjs/Subject';
 import { isDevMode, Injectable } from '@angular/core';
+import { DataStorageService } from '../shared/data-storage.service';
 
 @Injectable()
 export class PlanService
@@ -17,10 +18,7 @@ export class PlanService
      planEdit = new Subject<number>();
  
      constructor(){ 
-       if(!isDevMode()){
-         //private dataStorageService : DataStorageService
-         //dataStorageService.getposts();
-       }
+      //private dataStorageService : DataStorageService
      }
  
      set(plans: Plan[]) {
@@ -33,7 +31,8 @@ export class PlanService
        }
      
        getByIndex(index: number) {
-         return this.plans[index];
+ 
+        return this.plans[index];
        }
      
        add(plan: Plan) {
