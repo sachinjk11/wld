@@ -1,17 +1,18 @@
 body {
-  font: 400 15px Lato, sans-serif;
+   font-family: Publico,Georgia,serif;
   line-height: 1.8;
   color: #818181;
 }
 h2 {
-  font-size: 24px;
-  text-transform: uppercase;
+  font-size: 2.1rem;
+  /* font-size: 24px; */
   color: #303030;
   font-weight: 600;
   margin-bottom: 30px;
 }
 h4 {
-  font-size: 19px;
+  font-size: 1.6rem;
+  /* font-size: 19px; */
   line-height: 1.375em;
   color: #303030;
   font-weight: 400;
@@ -21,7 +22,8 @@ h4 {
   background-color: #f4511e;
   color: #fff;
   padding: 100px 25px;
-  font-family: Montserrat, sans-serif;
+  font-family: Publico,Georgia,serif;
+  /* font-family: Montserrat, sans-serif; */
 }
 .container-fluid {
   padding: 60px 50px;
@@ -175,3 +177,28 @@ footer .glyphicon {
     font-size: 150px;
   }
 }
+
+
+.myTitle
+{
+   font-family: Publico,Georgia,serif;
+}   
+
+.myText
+{
+ font-family: Publico,Georgia,serif;
+ font-size: 1.6rem;
+}
+
+ /*.table
+{
+   table : table-hover; 
+}*/
+
+ul.circle {
+   list-style-type: circle;
+ }
+
+ li.circle {
+   list-style-type: circle;
+ }

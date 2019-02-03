@@ -5,6 +5,7 @@ import { DataStorageService } from '../shared/data-storage.service';
 import { AuthService } from '../auth/auth.service';
 import { PlanService } from '../plan/plans.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PostService } from '../post/posts.service';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   constructor(private dataStorageService: DataStorageService,
               public authService: AuthService, private planservice : PlanService,
-              private route : ActivatedRoute, private router : Router) {
+              private route : ActivatedRoute, private router : Router,
+              private postservice : PostService) {
   }
 
   ngOnInit() {
@@ -46,9 +48,14 @@ export class HeaderComponent implements OnInit {
 
   onClickPlan()
   {
-    console.log('this.planSelected----'+this.planservice.planSelected);
     this.planservice.planSelected.next(false);
-    console.log('this.planSelected----'+this.planservice.planSelected);
+    console.log('h->'+this.planservice.planSelected);
+    
+    this.router.navigate(['/weight-loss-diet-plans'], {relativeTo: this.route});
+  }
+  onClickPost()
+  {
+    this.postservice.postSelected.next(false);
     this.router.navigate(['/weight-loss-diet-plans'], {relativeTo: this.route});
   }
 }

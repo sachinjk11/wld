@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Plan } from '../plan.model';
 import { Subscription } from 'rxjs/Subscription';
 import { PlanService } from '../plans.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 import { DataStorageService } from 'src/app/shared/data-storage.service';
 import { Http, Response } from '@angular/http';
@@ -26,7 +26,9 @@ export class PlanListComponent implements OnInit {
    }
  
    ngOnInit() {
-        
+         
+          console.log(this.router.url);
+          
           this.subscription1 =  this.planService.planUpdated.subscribe(
           (plans : Plan[])=>{ this.plans = plans});
       
@@ -43,6 +45,7 @@ export class PlanListComponent implements OnInit {
                this.plans = this.planService.get();
               this.planService.planSelected.next(false);
           } 
+          console.log(this.planSelected);
           
           console.log('this.planSelected--'+this.planSelected);
           
