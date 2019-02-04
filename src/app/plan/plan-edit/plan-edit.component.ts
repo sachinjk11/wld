@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { PlanService } from '../plans.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
+import { Response } from '@angular/http';
 
 @Component({
   selector: 'app-plan-edit',
@@ -15,7 +17,7 @@ export class PlanEditComponent implements OnInit {
   planFormGroup : FormGroup;
 
   constructor(private planService: PlanService, private route: ActivatedRoute, 
-    private router: Router) { }
+    private router: Router, private dataStorageService: DataStorageService) { }
 
   ngOnInit() {
     this.route.params
@@ -64,6 +66,16 @@ export class PlanEditComponent implements OnInit {
       'imagePath': new FormControl(pimagepath, Validators.required),
       
     });
+  }
+
+  saveToDB()
+  {
+    this.dataStorageService.storePlans().subscribe(
+      (response: Response) => {
+        console.log('Posts----'+response);
+      }
+    );
+    this.onCancel();
   }
 
 }

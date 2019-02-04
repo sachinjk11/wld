@@ -26,16 +26,14 @@ export class PlanListComponent implements OnInit {
    }
  
    ngOnInit() {
-         
-          console.log(this.router.url);
-          
+               
           this.subscription1 =  this.planService.planUpdated.subscribe(
           (plans : Plan[])=>{ this.plans = plans});
       
           this.subscription2 =  this.planService.planSelected.subscribe(
           (planSelected : boolean)=>{ this.planSelected = planSelected});
       
-          if (typeof this.planSelected == 'undefined')
+          if (this.router.url.split("/").length > 3)
           {
             this.dataStorageService.getPlans();
             this.planService.planSelected.next(true);
@@ -45,9 +43,7 @@ export class PlanListComponent implements OnInit {
                this.plans = this.planService.get();
               this.planService.planSelected.next(false);
           } 
-          console.log(this.planSelected);
-          
-          console.log('this.planSelected--'+this.planSelected);
+
           
 
    }

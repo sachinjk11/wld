@@ -4,6 +4,7 @@ import { Post } from '../posts.model';
 import { Subscription } from 'rxjs/Subscription';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
 
 @Component({
   selector: 'app-post-list',
@@ -16,19 +17,29 @@ export class PostListComponent implements OnInit {
  subscription2 : Subscription;
  postSelected : boolean;
 
-  constructor(private postservice : PostService, private router : Router, private route : ActivatedRoute, public authService: AuthService) { 
+  constructor(private postservice : PostService, private router : Router, private route : ActivatedRoute, public authService: AuthService,
+    private dataStorageService : DataStorageService, private postService : PostService) { 
     //this.postservice.postSelected.next(false);
   }
 
   ngOnInit() {
+
     this.subscription1 =  this.postservice.postUpdated.subscribe(
     (posts : Post[])=>{ this.posts = posts});
 
    this.subscription2 =  this.postservice.postSelected.subscribe(
     (postSelected : boolean)=>{ this.postSelected = postSelected});
 
-    this.posts = this.postservice.get();
-    this.postservice.postSelected.next(false);
+    if (this.router.url.split("/").length > 3)
+    {
+      this.dataStorageService.getposts();
+      this.postService.postSelected.next(true);
+    }
+    else
+    {
+        this.posts = this.postservice.get();
+        this.postservice.postSelected.next(false);
+    }   
      
   }
 

@@ -49,6 +49,7 @@ export class HeaderComponent implements OnInit {
   onClickPlan()
   {
     this.planservice.planSelected.next(false);
+
     console.log('h->'+this.planservice.planSelected);
     
     this.router.navigate(['/weight-loss-diet-plans'], {relativeTo: this.route});
@@ -56,6 +57,9 @@ export class HeaderComponent implements OnInit {
   onClickPost()
   {
     this.postservice.postSelected.next(false);
-    this.router.navigate(['/weight-loss-diet-plans'], {relativeTo: this.route});
+
+    console.log('h->'+this.planservice.planSelected);
+
+    this.router.navigate(['/weight-loss-Tips'], {relativeTo: this.route});
   }
 }
