@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { PlanService } from '../plans.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
-import { DataStorageService } from 'src/app/shared/data-storage.service';
+import { DataStorageService } from '../../shared/data-storage.service';
 import { Response } from '@angular/http';
 
 @Component({

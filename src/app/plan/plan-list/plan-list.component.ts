@@ -1,16 +1,17 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Plan } from '../plan.model';
+import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
+import { Router, ActivatedRoute } from '@angular/router';
+import { DataStorageService } from '../../shared/data-storage.service';
+import { Plan } from '../plan.model';
 import { PlanService } from '../plans.service';
-import { Router, ActivatedRoute, Params } from '@angular/router';
-import { AuthService } from 'src/app/auth/auth.service';
-import { DataStorageService } from 'src/app/shared/data-storage.service';
-import { Http, Response } from '@angular/http';
+import { AuthService } from '../../auth/auth.service';
+
+
 
 @Component({
   selector: 'app-plan-list',
   templateUrl: './plan-list.component.html',
-  styleUrls: ['./plan-list.component.css']
+  styleUrls: ['./plan-list.component.css'],
 })
 export class PlanListComponent implements OnInit {
 
@@ -20,8 +21,8 @@ export class PlanListComponent implements OnInit {
   subscription2 : Subscription;
   planSelected : boolean;
  
-   constructor(private planService : PlanService, private router : Router, private route : ActivatedRoute, public authService: AuthService,
-     private dataStorageService : DataStorageService) { 
+   constructor(private planService : PlanService, private router : Router, private route : ActivatedRoute,
+     private dataStorageService : DataStorageService,public authService: AuthService) { 
   
    }
  

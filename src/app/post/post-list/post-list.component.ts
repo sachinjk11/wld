@@ -1,10 +1,10 @@
-import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PostService } from '../posts.service';
 import { Post } from '../posts.model';
 import { Subscription } from 'rxjs/Subscription';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthService } from 'src/app/auth/auth.service';
-import { DataStorageService } from 'src/app/shared/data-storage.service';
+import { AuthService } from '../../auth/auth.service';
+import { DataStorageService } from '../../shared/data-storage.service';
 
 @Component({
   selector: 'app-post-list',

@@ -1,10 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
-import { Subscription } from 'rxjs/Subscription';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 import { PostService } from '../posts.service';
-import { Post } from '../posts.model';
+
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { DataStorageService } from 'src/app/shared/data-storage.service';
+import { DataStorageService } from '../../shared/data-storage.service';
 import { Response } from '@angular/http';
 
 @Component({

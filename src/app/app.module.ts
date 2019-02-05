@@ -42,8 +42,10 @@ import { FeedbackComponent } from './about-us/feedback/feedback.component';
 import { HtmlViewerComponent } from './about-us/html-viewer/html-viewer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
+  bootstrap: [AppComponent],
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -75,11 +77,12 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
   ],
   imports:[
- CommonModule,
-NgtUniversalModule,
+    BrowserModule.withServerTransition({appId: 'my-app'}),
+    CommonModule,
+    NgtUniversalModule,
  
- TransferHttpCacheModule,
-HttpClientModule,
+    TransferHttpCacheModule,
+    HttpClientModule,
  
     
     FormsModule,

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Plan } from '../plan.model';
 import { PlanService } from '../plans.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { AuthService } from 'src/app/auth/auth.service';
+import { AuthService } from '../../auth/auth.service';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
