@@ -41,7 +41,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { FeedbackComponent } from './about-us/feedback/feedback.component';
 import { HtmlViewerComponent } from './about-us/html-viewer/html-viewer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
@@ -91,8 +91,7 @@ import { BrowserModule } from '@angular/platform-browser';
     AppRoutingModule
   ],
   providers: [ShoppingListService, RecipeService, PlanService,
-    DataStorageService, AuthService, AuthGuard, PostService,
-    {provide: LocationStrategy, useClass: HashLocationStrategy}],
+    DataStorageService, AuthService, AuthGuard, PostService],
 
   
     
