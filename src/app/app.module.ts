@@ -30,7 +30,6 @@ import { PostEditComponent } from './post/post-edit/post-edit.component';
 import { PostDetailsComponent } from './post/post-details/post-details.component';
 import { PostItemComponent } from './post/post-list/post-item/post-item.component';
 import { PostService } from './post/posts.service';
-import { DietPlansComponent } from './diet-plans/diet-plans.component';
 import { FooterComponent } from './footer/footer.component';
 import { PlanDetailsComponent } from './plan/plan-details/plan-details.component';
 import { PlanEditComponent } from './plan/plan-edit/plan-edit.component';
@@ -64,7 +63,6 @@ import { BrowserModule } from '@angular/platform-browser';
     PostEditComponent,
     PostDetailsComponent,
     PostItemComponent,
-    DietPlansComponent,
     FooterComponent,
     PlanDetailsComponent,
     PlanEditComponent,

@@ -3,7 +3,7 @@
       <div>
 
         <button class="btn btn-success pull-left" (click)="onNewPlan()"  *ngIf="authService.isAuthenticated()" >New Plan</button>
-        <button class="btn btn-warning pull-right" (click)="onClickback()">Back</button>
+        <button class="btn btn-warning pull-right" *ngIf="planSelected"  (click)="onClickback()">Back</button>
 
       </div>
     </div>

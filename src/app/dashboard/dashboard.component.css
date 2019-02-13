@@ -1,3 +1,8 @@
+div
+{
+  font-family: Publico,Georgia,serif;
+}
+
 body {
    font-family: Publico,Georgia,serif;
   line-height: 1.8;
@@ -5,13 +10,15 @@ body {
 }
 h2 {
   font-size: 2.1rem;
-  /* font-size: 24px; */
-  color: #303030;
+  font-family: Publico,Georgia,serif;
+  /* font-size: 24px; 
+  color: #303030;*/
   font-weight: 600;
   margin-bottom: 30px;
 }
 h4 {
   font-size: 1.6rem;
+  font-family: Publico,Georgia,serif;
   /* font-size: 19px; */
   line-height: 1.375em;
   color: #303030;
@@ -78,15 +85,15 @@ h4 {
   box-shadow: 5px 0px 40px rgba(0,0,0, .2);
 }
 .panel-footer .btn:hover {
-  border: 1px solid #f4511e;
+  border: 0.1px solid #f4511e;
   background-color: #fff !important;
   color: #f4511e;
 }
 .panel-heading {
   color: #fff !important;
   background-color: #f4511e !important;
-  padding: 1px;
-  border-bottom: 1px solid transparent;
+  padding: 0.1px;
+  border-bottom: 0.1px solid transparent;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   border-bottom-left-radius: 0px;

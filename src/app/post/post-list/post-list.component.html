@@ -5,7 +5,7 @@
     <div >
   
       <button class="btn btn-success pull-left" (click)="onNewPost()"  *ngIf="authService.isAuthenticated()" >New Post</button>
-      <button class="btn btn-warning pull-right" (click)="onClickback()">Back</button>
+      <button class="btn btn-warning pull-right" *ngIf="postSelected"  (click)="onClickback()">Back</button>
   
     </div>
   </div>

@@ -54,3 +54,22 @@
     font-family: Publico,Georgia,serif;
     font-size: 1.6rem;
    }
+
+
+
+   .panel {
+      border: 1px solid #f4511e; 
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+    }
+    .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+    }
+
+
+    .panel-heading {
+      color: #fff !important;
+      background-color: #f4511e !important;
+      padding: 1.1px;
+      border-bottom: 1.1px solid transparent;
+    }

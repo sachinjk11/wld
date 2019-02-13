@@ -34,12 +34,16 @@ export class PostListComponent implements OnInit {
     {
       this.dataStorageService.getposts();
       this.postService.postSelected.next(true);
+      console.log(this.postSelected);
+      console.log(this.posts);
     }
     else
     {
         this.posts = this.postservice.get();
         this.postservice.postSelected.next(false);
-    }   
+    } 
+    
+      
      
   }
 
@@ -53,7 +57,7 @@ export class PostListComponent implements OnInit {
 
   onClickback(){
     this.postservice.postSelected.next(false);
-    this.router.navigate(['../'], {relativeTo: this.route});
+    this.router.navigate(['./'], {relativeTo: this.route});
    
   }
   new()

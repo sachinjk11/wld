@@ -3,6 +3,8 @@ import { Post } from '../posts.model';
 import { PostService } from '../posts.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { AuthService } from '../../auth/auth.service';
+import { Subscription } from 'rxjs';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-post-details',
@@ -13,8 +15,11 @@ export class PostDetailsComponent implements OnInit {
 
   post: Post;
   id: number;
+  subscription1 : Subscription;
 
-  constructor(private postservice : PostService, private router : Router, private route : ActivatedRoute,public authService: AuthService) {
+  constructor(private postservice : PostService, private router : Router,
+     private route : ActivatedRoute,public authService: AuthService,
+     private titleService: Title) {
   }
 
   ngOnInit() {
@@ -23,9 +28,15 @@ export class PostDetailsComponent implements OnInit {
         (params: Params) => {
           this.id = +params['id'];
           this.post = this.postservice.getByIndex(this.id);
+
+          this.subscription1 =  this.postservice.postUpdated.subscribe(
+            (posts : Post[])=>{ 
+              this.post = posts[this.id];  
+              this.titleService.setTitle(this.post.title);
+            });
         }
       );
-      this.post = this.postservice.getByIndex(this.id);
+    //  this.post = this.postservice.getByIndex(this.id);
       this.postservice.postSelected.next(true);
     
       

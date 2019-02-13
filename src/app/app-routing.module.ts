@@ -12,8 +12,6 @@ import { AuthGuard } from './auth/auth-guard.service';
 import { PostListComponent } from './post/post-list/post-list.component';
 import { PostEditComponent } from './post/post-edit/post-edit.component';
 import { PostDetailsComponent } from './post/post-details/post-details.component';
-
-import { DietPlansComponent } from './diet-plans/diet-plans.component';
 import { PlanListComponent } from './plan/plan-list/plan-list.component';
 import { PlanEditComponent } from './plan/plan-edit/plan-edit.component';
 import { PlanDetailsComponent } from './plan/plan-details/plan-details.component';

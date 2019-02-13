@@ -20,7 +20,7 @@ export class PlanListComponent implements OnInit {
   subscription1 : Subscription;
   subscription2 : Subscription;
   planSelected : boolean;
- 
+
    constructor(private planService : PlanService, private router : Router, private route : ActivatedRoute,
      private dataStorageService : DataStorageService,public authService: AuthService) { 
   
@@ -33,7 +33,7 @@ export class PlanListComponent implements OnInit {
       
           this.subscription2 =  this.planService.planSelected.subscribe(
           (planSelected : boolean)=>{ this.planSelected = planSelected});
-      
+
           if (this.router.url.split("/").length > 3)
           {
             this.dataStorageService.getPlans();
@@ -56,7 +56,7 @@ export class PlanListComponent implements OnInit {
  
    onClickback(){
      this.planService.planSelected.next(false);
-     this.router.navigate(['../'], {relativeTo: this.route});
+     this.router.navigate(['./'], {relativeTo: this.route});
     
    }
  

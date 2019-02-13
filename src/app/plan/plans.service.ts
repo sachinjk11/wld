@@ -2,6 +2,7 @@ import { Plan } from './plan.model';
 import { Subject } from 'rxjs/Subject';
 import { isDevMode, Injectable } from '@angular/core';
 import { DataStorageService } from '../shared/data-storage.service';
+import { Title } from '@angular/platform-browser';
 
 @Injectable()
 export class PlanService
@@ -31,8 +32,9 @@ export class PlanService
        }
      
        getByIndex(index: number) {
- 
-        return this.plans[index];
+        let plan = this.plans[index];
+       // this.setTitle(plan.title);
+        return plan;
        }
      
        add(plan: Plan) {
@@ -49,5 +51,6 @@ export class PlanService
          this.plans.splice(index, 1);
          this.planUpdated.next(this.plans.slice());
        }
+    
  
 }
