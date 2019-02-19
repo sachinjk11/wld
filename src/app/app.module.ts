@@ -2,7 +2,7 @@ import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { TransferHttpCacheModule } from '@nguniversal/common';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -42,6 +42,15 @@ import { HtmlViewerComponent } from './about-us/html-viewer/html-viewer.componen
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { BrowserModule } from '@angular/platform-browser';
+import { DataProvider } from './shared/dataProvider';
+
+export function postProviderFactory(provider: DataProvider) {
+  return () => provider.loadPost();
+}
+
+export function planProviderFactory(provider: DataProvider) {
+  return () => provider.loadPlan();
+}
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -89,9 +98,11 @@ import { BrowserModule } from '@angular/platform-browser';
     AppRoutingModule
   ],
   providers: [ShoppingListService, RecipeService, PlanService,
-    DataStorageService, AuthService, AuthGuard, PostService],
-
-  
+    DataStorageService, AuthService, AuthGuard, PostService,
+    DataProvider, 
+    { provide: APP_INITIALIZER, useFactory: planProviderFactory, deps: [DataProvider], multi: true },
+    { provide: APP_INITIALIZER, useFactory: postProviderFactory, deps: [DataProvider], multi: true }
+  ],
     
 })
 export class AppModule { }

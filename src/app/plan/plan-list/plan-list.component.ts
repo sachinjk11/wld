@@ -5,6 +5,7 @@ import { DataStorageService } from '../../shared/data-storage.service';
 import { Plan } from '../plan.model';
 import { PlanService } from '../plans.service';
 import { AuthService } from '../../auth/auth.service';
+import { DataProvider } from 'src/app/shared/dataProvider';
 
 
 
@@ -22,8 +23,10 @@ export class PlanListComponent implements OnInit {
   planSelected : boolean;
 
    constructor(private planService : PlanService, private router : Router, private route : ActivatedRoute,
-     private dataStorageService : DataStorageService,public authService: AuthService) { 
-  
+     private dataStorageService : DataStorageService,public authService: AuthService, private dataprovider : DataProvider) { 
+      this.plans = dataprovider.getPlans();
+      console.log('this.plans'+this.plans);
+      
    }
  
    ngOnInit() {
